@@ -1,8 +1,10 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
+from task_manager.mixins import UserPermissionMixin
 from task_manager.users.forms import CustomUserChangeForm, CustomUserCreationForm
 from task_manager.users.models import User
 
@@ -23,7 +25,9 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     success_url = reverse_lazy("login")
 
 
-class UserUpdateView(SuccessMessageMixin, UpdateView):
+class UserUpdateView(
+    SuccessMessageMixin, UserPermissionMixin, UpdateView, LoginRequiredMixin
+):
     model = User
     form_class = CustomUserChangeForm
     template_name = "form.html"
@@ -32,7 +36,9 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy("user_list")
 
 
-class UserDeleteView(SuccessMessageMixin, DeleteView):
+class UserDeleteView(
+    SuccessMessageMixin, UserPermissionMixin, DeleteView, LoginRequiredMixin
+):
     model = User
     template_name = "users/user_delete.html"
     extra_context = {"title": _("Delete user"), "button_name": _("Delete")}

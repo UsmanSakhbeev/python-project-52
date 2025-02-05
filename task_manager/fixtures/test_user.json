@@ -1,0 +1,22 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "first_name": "name",
+            "second_name": "surname",
+            "username": "Ivan",
+            "password": "z123321z"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields":{
+            "first_name": "Centaur",
+            "second_name": "Warrunner",
+            "username": "Bradwarden",
+            "password": "q321123q"
+        }
+    }
+]
