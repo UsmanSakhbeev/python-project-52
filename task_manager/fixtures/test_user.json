@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "first_name": "name",
-            "second_name": "surname",
+            "last_name": "surname",
             "username": "Ivan",
             "password": "z123321z"
         }
@@ -14,7 +14,7 @@
         "pk": 2,
         "fields":{
             "first_name": "Centaur",
-            "second_name": "Warrunner",
+            "last_name": "Warrunner",
             "username": "Bradwarden",
             "password": "q321123q"
         }

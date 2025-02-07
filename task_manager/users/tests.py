@@ -10,7 +10,7 @@ class UserTestCase(TestCase):
     def setUp(self):
         self.user = User.objects.get(pk=1)
         self.other_user = User.objects.get(pk=2)
-        self.client.login(username="Ivan", password="z123321z")
+        self.client.force_login(self.user)
 
     def test_user_list(self):
         response = self.client.get(reverse("user_list"))
@@ -23,7 +23,7 @@ class UserTestCase(TestCase):
             reverse("user_create"),
             {
                 "first_name": "New",
-                "second_name": "User",
+                "last_name": "User",
                 "username": "newuser",
                 "password1": "securepass123",
                 "password2": "securepass123",
@@ -37,12 +37,13 @@ class UserTestCase(TestCase):
             reverse("user_update", args=[self.user.pk]),
             {
                 "first_name": "UpdatedName",
-                "second_name": "UpdatedSurname",
-                "username": "Ivan",
+                "last_name": "UpdatedSurname",
+                "username": "Ivannn",
                 "password1": "securepass321",
                 "password2": "securepass321",
             },
         )
+
         self.assertEqual(response.status_code, 302)
         self.user.refresh_from_db()
         self.assertEqual(self.user.first_name, "UpdatedName")

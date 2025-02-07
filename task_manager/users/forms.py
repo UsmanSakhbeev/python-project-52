@@ -9,7 +9,7 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = (
             "first_name",
-            "second_name",
+            "last_name",
         ) + UserCreationForm.Meta.fields
 
 
