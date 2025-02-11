@@ -44,15 +44,15 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
     model = Task
     form_class = TaskCreationForm
     template_name = "form.html"
-    extra_context = {"title": _("Task Uapdate"), "button_name": _("Update")}
-    success_message = _("Task was created successfully")
+    extra_context = {"title": _("Task Update"), "button_name": _("Update")}
+    success_message = _("Task was updated successfully")
     success_url = reverse_lazy("task_list")
 
 
 class TaskDeleteView(LoginRequiredMixin, UserPermissionMixin, DeleteView):
     model = Task
-    template_name = "users/task_delete.html"
-    extra_context = {"title": _("Delete user"), "button_name": _("Delete")}
-    success_message = _("User was deleted succesfully")
+    template_name = "tasks/task_delete.html"
+    extra_context = {"title": _("Delete Task"), "button_name": _("Delete")}
+    success_message = _("Task was deleted successfully")
     permission_denied_message = _("Only the task's author can delete it")
-    success_url = reverse_lazy("login")
+    success_url = reverse_lazy("task_list")

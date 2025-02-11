@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Просмотр задачи</h2>
+    <div class="card">
+        <div class="card-header bg-secondary text-white">
+            <h4>{{ task.name }}</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <td><strong>Автор</strong></td>
+                        <td>{{ task.author.get_full_name }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Исполнитель</strong></td>
+                        <td>{{ task.executor.get_full_name|default:"None" }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Статус</strong></td>
+                        <td>{{ task.status }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Дата создания</strong></td>
+                        <td>{{ task.created_at|date:"d.m.Y H:i" }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Метки:</strong></td>
+                        <td>
+                            <ul>
+                                {% for label in task.label.all %}
+                                    <li>{{ label.name }}</li>
+                                {% empty %}
+                                    <li>Нет меток</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="{% url 'task_update' task.id %}" class="btn btn-primary">Изменить</a>
+            <a href="{% url 'task_delete' task.id %}" class="btn btn-danger">Удалить</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
