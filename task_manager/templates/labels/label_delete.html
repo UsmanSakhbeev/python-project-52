@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2 class="mb-3">Удаление метки</h2>
+    <p>Вы уверены, что хотите удалить метку <strong>{{ label.name }}</strong>?</p>
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="d-flex justify-content-start">
+        <button type="submit" class="btn btn-danger me-2">Удалить</button>
+        <a href="{% url 'label_list' %}" class="btn btn-secondary">Отмена</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

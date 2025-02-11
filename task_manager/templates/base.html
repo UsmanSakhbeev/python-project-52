@@ -10,33 +10,45 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">Менеджер задач</a>
+        <a class="navbar-brand me-3" href="#">Менеджер задач</a> <!-- Уменьшенный отступ -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
+        <div class="collapse navbar-collapse align-items-center" id="navbarNav"> <!-- Выравнивание по центру -->
+          <ul class="navbar-nav d-flex align-items-center">
+            <li class="nav-item me-2"> <!-- Уменьшен отступ -->
               <a class="nav-link" href="{% url "user_list" %}">Пользователи</a>
             </li>
             {% if user.is_authenticated %}
-              <li class="nav-item d-flex align-items-center">
-                <form action="{% url 'status_list' %}" method="get">
+              <li class="nav-item me-3">
+                <form action="{% url 'status_list' %}" method="get" class="d-flex align-items-center">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-link nav-link p-0" style="border: none; background: none;">Статусы</button>
+                    <button type="submit" class="btn btn-link nav-link p-0">Статусы</button>
                 </form>
               </li>
-              <li class="nav-item d-flex align-items-center">
-                <form action="{% url 'logout' %}" method="post">
+              <li class="nav-item me-3">
+                <form action="{% url 'label_list' %}" method="get" class="d-flex align-items-center">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-link nav-link p-0" style="border: none; background: none;">Выход</button>
+                    <button type="submit" class="btn btn-link nav-link p-0">Метки</button>
+                </form>
+              </li>
+              <li class="nav-item me-3">
+                <form action="{% url 'task_list' %}" method="get" class="d-flex align-items-center">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link nav-link p-0">Задачи</button>
+                </form>
+              </li>
+              <li class="nav-item me-3">
+                <form action="{% url 'logout' %}" method="post" class="d-flex align-items-center">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link nav-link p-0">Выход</button>
                 </form>
               </li>
             {% else %}
-              <li class="nav-item">
+              <li class="nav-item me-3">
                 <a class="nav-link" href="{% url "login" %}">Вход</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item me-3">
                 <a class="nav-link" href="{% url "user_create" %}">Регистрация</a>
               </li>
             {% endif %}
