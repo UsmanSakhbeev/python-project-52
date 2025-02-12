@@ -76,6 +76,7 @@ class StatusModelTest(TestCase):
         self.assertFalse(Status.objects.filter(id=self.status1.id).exists())
 
     def test_delete_status_with_tasks(self):
+        url = reverse("status_delete", args=[self.status1.id])
         Task.objects.create(
             name="Test Task",
             description="Some description",
@@ -85,7 +86,6 @@ class StatusModelTest(TestCase):
         )
 
         self.client.force_login(self.user)
-        url = reverse("status_delete", args=[self.status1.id])
         response = self.client.post(url, follow=True)
         self.assertTrue(Status.objects.filter(id=self.status1.id).exists())
         messages = list(response.context["messages"])
