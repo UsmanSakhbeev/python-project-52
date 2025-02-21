@@ -11,7 +11,7 @@ class LoginView(SuccessMessageMixin, DjangoLoginView):
     template_name = "form.html"
     form_class = AuthenticationForm
     next_page = reverse_lazy("index")
-    succes_message = _("You were logged in")
+    success_message = _("You were logged in")
     extra_context = {"title": _("Log In"), "button_name": _("Enter")}
 
 
