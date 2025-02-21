@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-21 09:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: labels/models.py:7 statuses/models.py:6 tasks/models.py:11
+msgid "Name"
+msgstr "Имя"
+
+#: labels/views.py:26
+msgid "Create Label"
+msgstr "Создать метку"
+
+#: labels/views.py:26 statuses/views.py:25 tasks/views.py:37 users/views.py:23
+msgid "Create"
+msgstr "Создать"
+
+#: labels/views.py:27
+msgid "Label was created successfully"
+msgstr "Метка успешно создана"
+
+#: labels/views.py:35
+msgid "Update Label"
+msgstr "Изменить метку"
+
+#: labels/views.py:35 statuses/views.py:34 tasks/views.py:50 users/views.py:34
+msgid "Update"
+msgstr "Изменить"
+
+#: labels/views.py:36
+msgid "Label was updated successfully"
+msgstr "Метка успешно изменена"
+
+#: labels/views.py:43
+msgid "Delete Label"
+msgstr "Удалить метку"
+
+#: labels/views.py:43 statuses/views.py:42 tasks/views.py:60 users/views.py:44
+msgid "Delete"
+msgstr "Удалить"
+
+#: labels/views.py:44
+msgid "Label was deleted successfully"
+msgstr "Метка успешно удалена"
+
+#: labels/views.py:52
+msgid "Cannot delete label because it is associated with existing tasks."
+msgstr "Невозможно удалить метку, так как она используется"
+
+#: mixins.py:9
+msgid "You don't have rights to change another user."
+msgstr "У вас нет прав изменять данные о другом пользователе"
+
+#: mixins.py:20 tasks/views.py:62
+msgid "Only the task's author can delete it"
+msgstr "Задачу может удалить только ее автор"
+
+#: statuses/views.py:25
+msgid "Create Status"
+msgstr "Создать статус"
+
+#: statuses/views.py:26
+msgid "Status was created successfully"
+msgstr "Статус успешно создан"
+
+#: statuses/views.py:34
+msgid "Update Status"
+msgstr "Изменить статус"
+
+#: statuses/views.py:35
+msgid "Status was updated successfully"
+msgstr "Статус успешно изменен"
+
+#: statuses/views.py:42
+msgid "Delete Status"
+msgstr "Удалить статус"
+
+#: statuses/views.py:43
+msgid "Status was deleted successfully"
+msgstr "Статус успешно удален"
+
+#: statuses/views.py:55
+msgid "Cannot delete status because it is associated with existing tasks."
+msgstr "Невозможно удалить статус, так как он используется"
+
+#: tasks/filter.py:13
+msgid "Only my own tasks"
+msgstr "Только свои задачи"
+
+#: tasks/filter.py:20
+msgid "Label"
+msgstr "Метка"
+
+#: tasks/models.py:13
+msgid "Description"
+msgstr "Описание"
+
+#: tasks/models.py:15
+msgid "Status"
+msgstr "Статус"
+
+#: tasks/models.py:20
+msgid "Author"
+msgstr "Автор"
+
+#: tasks/models.py:26
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: tasks/models.py:30
+msgid "Labels"
+msgstr "Метки"
+
+#: tasks/views.py:37
+msgid "Task Create"
+msgstr "Создать задачу"
+
+#: tasks/views.py:38
+msgid "Task was created successfully"
+msgstr "Задача успешно создана"
+
+#: tasks/views.py:50
+msgid "Task Update"
+msgstr "Изменить задачу"
+
+#: tasks/views.py:51
+msgid "Task was updated successfully"
+msgstr "Задача успешно изменена"
+
+#: tasks/views.py:60
+msgid "Delete Task"
+msgstr "Удалить задачу"
+
+#: tasks/views.py:61
+msgid "Task was deleted successfully"
+msgstr "Задача успешно удалена"
+
+#: users/views.py:23
+msgid "Sign Up"
+msgstr "Регистрация"
+
+#: users/views.py:24
+msgid "User was registrated succesfully"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: users/views.py:34
+msgid "Update User"
+msgstr "Изменить данные пользователя"
+
+#: users/views.py:35
+msgid "User was updated succesfully"
+msgstr "Пользователь успешно изменен"
+
+#: users/views.py:44
+msgid "Delete user"
+msgstr "Удалить пользователя"
+
+#: users/views.py:45
+msgid "User was deleted succesfully"
+msgstr "Пользователь успешно удален"
+
+#: views.py:12
+msgid "You were logged in"
+msgstr "Вы залогинены"
+
+#: views.py:13
+msgid "Log In"
+msgstr "Вход"
+
+#: views.py:13
+msgid "Enter"
+msgstr "Войти"
