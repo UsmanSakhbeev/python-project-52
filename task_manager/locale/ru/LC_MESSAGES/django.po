@@ -53,8 +53,8 @@ msgid "Delete Label"
 msgstr "Удалить метку"
 
 #: labels/views.py:43 statuses/views.py:42 tasks/views.py:60 users/views.py:44
-msgid "Delete"
-msgstr "Удалить"
+msgid "Yes, delete"
+msgstr "Да, удалить"
 
 #: labels/views.py:44
 msgid "Label was deleted successfully"
@@ -170,7 +170,7 @@ msgstr "Пользователь успешно изменен"
 
 #: users/views.py:44
 msgid "Delete user"
-msgstr "Удалить пользователя"
+msgstr "Удаление пользователя"
 
 #: users/views.py:45
 msgid "User was deleted succesfully"
