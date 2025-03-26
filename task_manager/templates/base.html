@@ -17,23 +17,17 @@
         <div class="collapse navbar-collapse align-items-center" id="navbarNav"> <!-- Выравнивание по центру -->
           <ul class="navbar-nav d-flex align-items-center">
             <li class="nav-item me-2"> <!-- Уменьшен отступ -->
-              <a class="nav-link" href="{% url "user_list" %}">Пользователи</a>
+              <a class="nav-link" href="{% url 'user_list' %}">Пользователи</a>
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item me-3">
-                <form action="{% url 'status_list' %}" method="get" class="d-flex align-items-center">
-                    <button type="submit" class="btn btn-link nav-link p-0">Статусы</button>
-                </form>
+                <a class="nav-link" href="{% url 'status_list' %}">Статусы</a>
               </li>
               <li class="nav-item me-3">
-                <form action="{% url 'label_list' %}" method="get" class="d-flex align-items-center">
-                    <button type="submit" class="btn btn-link nav-link p-0">Метки</button>
-                </form>
+                <a class="nav-link" href="{% url 'label_list' %}">Метки</a>
               </li>
               <li class="nav-item me-3">
-                <form action="{% url 'task_list' %}" method="get" class="d-flex align-items-center">
-                    <button type="submit" class="btn btn-link nav-link p-0">Задачи</button>
-                </form>
+                <a class="nav-link" href="{% url 'task_list' %}">Задачи</a>
               </li>
               <li class="nav-item me-3">
                 <form action="{% url 'logout' %}" method="post" class="d-flex align-items-center">
@@ -43,10 +37,10 @@
               </li>
             {% else %}
               <li class="nav-item me-3">
-                <a class="nav-link" href="{% url "login" %}">Вход</a>
+                <a class="nav-link" href="{% url 'login' %}">Вход</a>
               </li>
               <li class="nav-item me-3">
-                <a class="nav-link" href="{% url "user_create" %}">Регистрация</a>
+                <a class="nav-link" href="{% url 'user_create' %}">Регистрация</a>
               </li>
             {% endif %}
           </ul>
