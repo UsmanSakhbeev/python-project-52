@@ -43,4 +43,4 @@ class UserDeleteView(
     template_name = "users/user_delete.html"
     extra_context = {"title": _("Delete user"), "button_name": _("Yes, delete")}
     success_message = _("User was deleted succesfully")
-    success_url = reverse_lazy("login")
+    success_url = reverse_lazy("user_list")
