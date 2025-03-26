@@ -29,8 +29,8 @@ msgid "Create Label"
 msgstr "Создать метку"
 
 #: labels/views.py:26 statuses/views.py:25 tasks/views.py:37 users/views.py:23
-msgid "Create"
-msgstr "Создать"
+msgid "Register"
+msgstr "Зарегистрировать"
 
 #: labels/views.py:27
 msgid "Label was created successfully"
@@ -153,7 +153,7 @@ msgid "Task was deleted successfully"
 msgstr "Задача успешно удалена"
 
 #: users/views.py:23
-msgid "Sign Up"
+msgid "Registration"
 msgstr "Регистрация"
 
 #: users/views.py:24
