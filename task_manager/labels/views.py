@@ -19,7 +19,7 @@ class LabelListView(LoginRequiredMixin, ListView):
     ordering = ["id"]
 
 
-class LabelCreateView(LoginRequiredMixin, CreateView):
+class LabelCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Label
     form_class = LabelCreationForm
     template_name = "form.html"
