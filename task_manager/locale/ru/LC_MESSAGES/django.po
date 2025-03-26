@@ -50,7 +50,7 @@ msgstr "Метка успешно изменена"
 
 #: labels/views.py:43
 msgid "Delete Label"
-msgstr "Удалить метку"
+msgstr "Удаление метки"
 
 #: labels/views.py:43 statuses/views.py:42 tasks/views.py:60 users/views.py:44
 msgid "Yes, delete"

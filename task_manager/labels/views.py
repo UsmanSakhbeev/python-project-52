@@ -40,7 +40,7 @@ class LabelUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 class LabelDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Label
     template_name = "labels/label_delete.html"
-    extra_context = {"title": _("Delete Label"), "button_name": _("Delete")}
+    extra_context = {"title": _("Delete Label"), "button_name": _("Yes, delete")}
     success_message = _("Label was deleted successfully")
     success_url = reverse_lazy("label_list")
 
