@@ -20,7 +20,7 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     model = User
     form_class = CustomUserCreationForm
     template_name = "form.html"
-    extra_context = {"title": _("Sign Up"), "button_name": _("Create")}
+    extra_context = {"title": _("Registration"), "button_name": _("Register")}
     success_message = _("User was registrated succesfully")
     success_url = reverse_lazy("login")
 
