@@ -180,6 +180,10 @@ msgstr "Пользователь успешно удален"
 msgid "You were logged in"
 msgstr "Вы залогинены"
 
+#: views.py:21
+msgid "You were logged out"
+msgstr "Вы разлогинены"
+
 #: views.py:13
 msgid "Log In"
 msgstr "Вход"
