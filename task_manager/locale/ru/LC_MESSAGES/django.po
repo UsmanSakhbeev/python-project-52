@@ -56,6 +56,10 @@ msgstr "Удалить метку"
 msgid "Yes, delete"
 msgstr "Да, удалить"
 
+#: labels/views.py:26 statuses/views.py:25 tasks/views.py:37
+msgid "Create"
+msgstr "Создать"
+
 #: labels/views.py:44
 msgid "Label was deleted successfully"
 msgstr "Метка успешно удалена"
