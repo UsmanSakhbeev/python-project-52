@@ -8,7 +8,7 @@
     <form method="post">
       {% csrf_token %}
       <div class="d-flex justify-content-start">
-        <button type="submit" class="btn btn-danger me-2">Удалить</button>
+        <button type="submit" class="btn btn-danger me-2">{{ button_name }}</button>
         <a href="{% url 'label_list' %}" class="btn btn-secondary">Отмена</a>
       </div>
     </form>
