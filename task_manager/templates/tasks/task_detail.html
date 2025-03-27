@@ -8,7 +8,10 @@
             <h4>{{ task.name }}</h4>
         </div>
         <div class="card-body">
-            <table class="table table-borderless">
+            <p>{{ task.description }}</p>  <!-- ✅ Добавлено описание -->
+            <hr style="width: 100%; margin: auto;">  <!-- ✅ Добавлена линия -->
+
+            <table class="table table-borderless mt-3">
                 <tbody>
                     <tr>
                         <td><strong>Автор</strong></td>
