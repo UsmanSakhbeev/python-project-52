@@ -144,3 +144,7 @@ ROLLBAR = {
     "code_version": "1.0",
     "root": BASE_DIR,
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://python-project-52-1-e004.onrender.com",
+]
