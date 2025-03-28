@@ -26,7 +26,7 @@ class Task(models.Model):
         verbose_name=_("Executor"),
         related_name="tasks_assigned",
     )
-    label = models.ManyToManyField(
+    labels = models.ManyToManyField(
         Label, blank=True, related_name="labels", verbose_name=_("Labels")
     )
     created_at = models.DateTimeField(auto_now_add=True)
