@@ -20,5 +20,5 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 # Открываем порт для Django (по умолчанию 8000)
 EXPOSE 8000
 
-# Команда для запуска приложения
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Команда для выполнения миграций и запуска сервера
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
