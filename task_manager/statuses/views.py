@@ -47,8 +47,9 @@ class StatusDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         try:
+            response = super().post(request, *args, **kwargs)
             messages.success(request, self.success_message)
-            return super().post(request, *args, **kwargs)
+            return response
         except ProtectedError:
             error_msg = _(
                 "Cannot delete status because it is associated "
