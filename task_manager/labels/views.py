@@ -46,7 +46,7 @@ class LabelDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
-        if Task.objects.filter(label=self.object).exists():
+        if Task.objects.filter(labels=self.object).exists():
             messages.error(
                 request,
                 _("Cannot delete label because it is associated with existing tasks."),
