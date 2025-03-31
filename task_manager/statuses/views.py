@@ -39,19 +39,20 @@ class StatusUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 class StatusDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Status
     template_name = "statuses/status_delete.html"
-    extra_context = {"title": _("Delete Status"), "button_name": _("Yes, delete")}
+    extra_context = {"title": _("Delete Status"),
+                     "button_name": _("Yes, delete")}
     success_message = _("Status was deleted successfully")
     success_url = reverse_lazy("status_list")
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         try:
-            response = super().post(request, *args, **kwargs)
             messages.success(request, self.success_message)
-            return response
+            return super().post(request, *args, **kwargs)
         except ProtectedError:
-            messages.error(
-                request,
-                _("Cannot delete status because it is associated with existing tasks."),
+            error_msg = _(
+                "Cannot delete status because it is associated "
+                "with existing tasks."
             )
+            messages.error(request, error_msg)
             return redirect("status_list")

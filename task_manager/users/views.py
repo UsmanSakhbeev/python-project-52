@@ -5,7 +5,9 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from task_manager.mixins import UserPermissionMixin
-from task_manager.users.forms import CustomUserChangeForm, CustomUserCreationForm
+from task_manager.users.forms import (
+    CustomUserChangeForm, CustomUserCreationForm,
+    )
 from task_manager.users.models import User
 
 
@@ -41,6 +43,7 @@ class UserDeleteView(
 ):
     model = User
     template_name = "users/user_delete.html"
-    extra_context = {"title": _("Delete user"), "button_name": _("Yes, delete")}
+    extra_context = {"title": _("Delete user"), "button_name":
+                     _("Yes, delete")}
     success_message = _("User was deleted succesfully")
     success_url = reverse_lazy("user_list")

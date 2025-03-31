@@ -1,7 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.db.models.deletion import ProtectedError
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
@@ -40,16 +39,18 @@ class LabelUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 class LabelDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Label
     template_name = "labels/label_delete.html"
-    extra_context = {"title": _("Delete Label"), "button_name": _("Yes, delete")}
+    extra_context = {"title": _("Delete Label"),
+                     "button_name": _("Yes, delete")}
     success_message = _("Label was deleted successfully")
     success_url = reverse_lazy("label_list")
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         if Task.objects.filter(labels=self.object).exists():
-            messages.error(
-                request,
-                _("Cannot delete label because it is associated with existing tasks."),
+            error_msg = _(
+                "Cannot delete label because it is associated "
+                "with existing tasks."
             )
+            messages.error(request, error_msg)
             return redirect("label_list")
         return super().post(request, *args, **kwargs)

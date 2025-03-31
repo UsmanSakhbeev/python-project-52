@@ -6,7 +6,9 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UserPermissionMixin(UserPassesTestMixin):
-    permission_denied_message = _("You don't have rights to change another user.")
+    permission_denied_message = _(
+        "You don't have rights to change another user."
+        )
 
     def test_func(self):
         return self.get_object() == self.request.user

@@ -1,5 +1,3 @@
-from urllib import request
-
 import django_filters
 from django.forms.widgets import CheckboxInput
 from django.utils.translation import gettext_lazy as _
