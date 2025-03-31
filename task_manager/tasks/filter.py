@@ -10,14 +10,14 @@ from task_manager.tasks.models import Task
 
 class TaskFilter(django_filters.FilterSet):
     user_own_tasks = django_filters.BooleanFilter(
-        labels=_("Only my own tasks"),
+        label=_("Only my own tasks"),
         widget=CheckboxInput,
         method="filter_user_own_tasks",
     )
 
     labels = django_filters.ModelMultipleChoiceFilter(
         queryset=Label.objects.all(),
-        labels=_("Label"),
+        label=_("Label"),
     )
 
     def filter_user_own_tasks(self, queryset, name, value):
