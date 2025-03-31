@@ -1,8 +1,6 @@
-from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from task_manager.statuses.models import Status
 from task_manager.tasks.models import Task
 from task_manager.users.models import User
 
@@ -32,11 +30,13 @@ class TaskViewTests(TestCase):
         self.assertContains(response, self.task2.name)
 
     def test_task_detail_requires_login(self):
-        response = self.client.get(reverse("task_detail", args=[self.task1.id]))
+        response = self.client.get(reverse("task_detail",
+                                           args=[self.task1.id]))
         self.assertEqual(response.status_code, 302)
 
         self.client.force_login(self.user1)
-        response = self.client.get(reverse("task_detail", args=[self.task1.id]))
+        response = self.client.get(reverse("task_detail",
+                                           args=[self.task1.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "tasks/task_detail.html")
         self.assertContains(response, self.task1.name)
@@ -61,7 +61,8 @@ class TaskViewTests(TestCase):
         self.assertTrue(Task.objects.filter(name="New Task").exists())
 
     def test_task_update_requires_login(self):
-        response = self.client.post(reverse("task_update", args=[self.task1.id]))
+        response = self.client.post(reverse("task_update",
+                                            args=[self.task1.id]))
         self.assertEqual(response.status_code, 302)
 
         self.client.force_login(self.user1)
@@ -80,7 +81,8 @@ class TaskViewTests(TestCase):
         self.assertTrue(Task.objects.filter(name="New Task").exists())
 
     def test_task_delete_requires_login(self):
-        response = self.client.get(reverse("task_delete", args=[self.task1.id]))
+        response = self.client.get(reverse("task_delete",
+                                           args=[self.task1.id]))
         self.assertEqual(response.status_code, 302)
 
         self.client.force_login(self.user1)

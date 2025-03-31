@@ -91,5 +91,6 @@ class StatusModelTest(TestCase):
         messages = list(response.context["messages"])
         self.assertEqual(
             str(messages[0]),
-            "Cannot delete status because it is associated with existing tasks.",
+            "Cannot delete status because it is "
+            "associated with existing tasks.",
         )
