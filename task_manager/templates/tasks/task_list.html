@@ -4,33 +4,31 @@
   <div class="container mt-4">
     <h2 class="mb-3">Список задач</h2>
 
-    <!-- Кнопка для создания новой задачи -->
     <div class="mb-3">
         <a href="{% url 'task_create' %}" class="btn btn-primary">Создать задачу</a>
     </div>
 
-    <!-- Форма фильтрации (названия полей сверху) -->
     <form method="get" class="mb-4 p-4 border rounded bg-light">
-        <div class="mb-3">
-            <label for="id_status" class="form-label">Статус</label>
-            <div>{{ filter.form.status }}</div>
-        </div>
-        <div class="mb-3">
-            <label for="id_executor" class="form-label">Исполнитель</label>
-            <div>{{ filter.form.executor }}</div>
-        </div>
-        <div class="mb-3">
-            <label for="id_label" class="form-label">Метка</label> <!-- ✅ Исправлено -->
-            <div>{{ filter.form.label }}</div> <!-- ✅ Исправлено -->
-        </div>
-        <div class="mb-3 form-check">
-            {{ filter.form.user_own_tasks }}
-            <label class="form-check-label" for="id_user_own_tasks">Только свои задачи</label>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-success me-2">Показать</button>
-            <a href="{% url 'task_list' %}" class="btn btn-secondary">Сбросить</a>
-        </div>
+      <div class="mb-3">
+          <label for="id_status" class="form-label">Статус</label>
+          <div>{{ filter.form.status }}</div>
+      </div>
+      <div class="mb-3">
+          <label for="id_executor" class="form-label">Исполнитель</label>
+          <div>{{ filter.form.executor }}</div>
+      </div>
+      <div class="mb-3">
+          <label for="id_labels" class="form-label">Метка</label>
+          <div>{{ filter.form.labels }}</div>
+      </div>
+      <div class="mb-3 form-check">
+          {{ filter.form.user_own_tasks }}
+          <label class="form-check-label" for="id_user_own_tasks">Только свои задачи</label>
+      </div>
+      <div>
+          <button type="submit" class="btn btn-success me-2">Показать</button>
+          <a href="{% url 'task_list' %}" class="btn btn-secondary">Сбросить</a>
+      </div>
     </form>
 
     {% if tasks %}
