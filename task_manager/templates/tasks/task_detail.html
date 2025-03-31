@@ -33,7 +33,7 @@
                         <td><strong>Метки:</strong></td>
                         <td>
                             <ul>
-                                {% for label in task.label.all %}
+                                {% for label in task.labels.all %}
                                     <li>{{ label.name }}</li>
                                 {% empty %}
                                     <li>Нет меток</li>
